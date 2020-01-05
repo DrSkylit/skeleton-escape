@@ -8,14 +8,14 @@ class PlayerParent extends Phaser.Physics.Arcade.Sprite {
 	    this.scene.physics.add.existing(this);
 	    this.body.immovable=true;
 	    this.body.setCollideWorldBounds(true);
-	    this.addAnimations();
+	    this.createAnimations();
 	    this.playIdleAnimation();
   	}
   	setLife(life){
   		this.life = life; 
   	}
 
-  	addAnimations(){
+  	createAnimations(){
   		console.log("function addAnimations needs to be called");
   	}
   	
