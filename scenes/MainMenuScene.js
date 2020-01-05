@@ -8,7 +8,8 @@ class MainMenuScene extends Phaser.Scene{
 	    this.load.image("tileMapImage", "assets/tilemap/skeletonEscapeTileset.png");
 	    this.load.tilemapTiledJSON("map", "assets/tilemap/skeletonEscapeMainMenu.json");
 	    //atlas
-	    this.load.atlas('skel', 'assets/atlas/spritesheet.png', 'assets/atlas/spritesheet.json');
+	    this.load.atlas('playerAtlas', 'assets/atlas/player/playersSheet.png', 'assets/atlas/player/playersSheet.json');
+	    this.load.atlas('enemyAtlas', 'assets/atlas/enemies/enemySheet.png', 'assets/atlas/enemies/enemySheet.json');
 	}
 	create(){
 		const map = this.make.tilemap({ key: "map" });
@@ -28,6 +29,8 @@ class MainMenuScene extends Phaser.Scene{
 
 		const spawnPoint = map.findObject("spawner", obj => obj.name === "PlayerSpawn");
 		var player = new Skeleton(spawnPoint.x,spawnPoint.y,this);
+
+		var player = new TinyZombie(300,300,this);
 
 	}
 	update(){
