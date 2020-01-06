@@ -33,8 +33,8 @@ class EnemyParent extends Phaser.Physics.Arcade.Sprite {
         // var vX = (Math.floor(Math.random() * (250-50+1))+50);
         // var vY = (Math.floor(Math.random() * (250-50+1))+50);
 
-        var vX = (Math.floor(Math.random() * (100))+25);
-        var vY = (Math.floor(Math.random() * (100))+25);
+        var vX = (Math.floor(Math.random() * (50))+25);
+        var vY = (Math.floor(Math.random() * (50))+25);
         // sets negative 50% of the time
         vX *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
         vY *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
@@ -49,11 +49,9 @@ class EnemyParent extends Phaser.Physics.Arcade.Sprite {
 
     update(time, delta) {
         if(this.body.velocity.x < 0){
-            this.scaleX = 1;
-            this.setFlipX(false);
-        }else{
-            this.scaleX = -1;
             this.setFlipX(true);
+        }else{
+            this.setFlipX(false);
         }
     }
     
