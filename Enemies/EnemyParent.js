@@ -1,7 +1,8 @@
 class EnemyParent extends Phaser.Physics.Arcade.Sprite {
-    constructor (x,y,scene,textureKey,image) {
+    constructor (x,y,scene,textureKey,image,group) {
         super(scene,x,y,textureKey,image);
         this.scene = scene;
+        group.add(this);
         this.createAnimations();
         this.scene.add.existing(this);
         this.scene.physics.add.existing(this);

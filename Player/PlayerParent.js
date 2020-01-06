@@ -69,7 +69,9 @@ class PlayerParent extends Phaser.Physics.Arcade.Sprite {
     }
 
     preUpdate(time, delta){
-      super.preUpdate(time, delta);
-      this.update(time, delta);
+        super.preUpdate(time, delta);
+        if(this.scene.sys.config != "MainMenu"){
+            this.update(time, delta);
+        }
     }
 }

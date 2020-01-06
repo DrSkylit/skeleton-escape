@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="60" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="13" nextobjectid="12">
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="60" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="13" nextobjectid="13">
  <editorsettings>
   <export target="skeletonEscapeMap.json" format="json"/>
  </editorsettings>
@@ -2097,12 +2097,12 @@
   </tile>
   <tile id="418">
    <properties>
-    <property name="collides" type="bool" value="true"/>
+    <property name="collides" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="419">
    <properties>
-    <property name="collides" type="bool" value="true"/>
+    <property name="collides" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="420">
@@ -2112,12 +2112,12 @@
   </tile>
   <tile id="421">
    <properties>
-    <property name="collides" type="bool" value="true"/>
+    <property name="collides" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="422">
    <properties>
-    <property name="collides" type="bool" value="true"/>
+    <property name="collides" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="423">
@@ -5164,5 +5164,6 @@
   <object id="1" name="PlayerSpawn" x="480" y="624">
    <point/>
   </object>
+  <object id="12" name="enemySpawner" x="32" y="64" width="896" height="464"/>
  </objectgroup>
 </map>
