@@ -2,6 +2,7 @@ class MainMenuScene extends Phaser.Scene{
 	constructor(){
 		super('MainMenu');
 		var cursors;
+		var enemiesGroup;
 	}
 	preload(){
 		// tilemap
@@ -22,16 +23,22 @@ class MainMenuScene extends Phaser.Scene{
 	    const doorClosedLayer = map.createStaticLayer("door_open", tileset, 0, 0);
 	    const doorOpenLayer = map.createStaticLayer("door_closed", tileset, 0, 0);
 
+	    upperWallsLayer.setCollisionByProperty({ collides: true });
+      	lowerWallsLayer.setCollisionByProperty({ collides: true });
+
 	    const gameTitle = map.findObject("mainMenuText", obj => obj.name === "GameTitle");
 	    this.add.text(gameTitle.x, gameTitle.y, gameTitle.text.text,{ fontFamily: gameTitle.text.fontfamily, fontSize: gameTitle.text.pixelsize, color:gameTitle.text.color});
 
 		this.cursors = this.input.keyboard.createCursorKeys();
 
-		const spawnPoint = map.findObject("spawner", obj => obj.name === "PlayerSpawn");
-		var player = new Skeleton(spawnPoint.x,spawnPoint.y,this);
-
-		var player = new TinyZombie(300,300,this);
-
+		var player = new Skeleton(this);
+		player.setStartingPosition(map);
+		for (var i = 0; i < 10; i++) {
+			var tinyZombie = new TinyZombie(this);
+			tinyZombie.setStartingPosition(map);
+			this.physics.add.collider(tinyZombie, upperWallsLayer);
+      		this.physics.add.collider(tinyZombie, lowerWallsLayer);
+		}
 	}
 	update(){
 		if (this.cursors.space.isDown){

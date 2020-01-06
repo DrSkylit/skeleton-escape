@@ -1,6 +1,6 @@
 class Skeleton extends PlayerParent{
-  	constructor (x,y,scene) {
-	    super(x,y,scene,"playerAtlas","skelet_idle_anim_f0.png");
+  	constructor (scene) {
+	    super(0,0,scene,"playerAtlas","skelet_idle_anim_f0.png");
 	}
     createAnimations(){
 		var skelIdle = this.scene.anims.generateFrameNames('playerAtlas', {

@@ -22,4 +22,10 @@ class PlayerParent extends Phaser.Physics.Arcade.Sprite {
   	playIdleAnimation(){
   		console.log("function playIdleAnimation needs to be called");
   	}
+
+  	setStartingPosition(map){
+      const spawnPoint = map.findObject("spawner", obj => obj.name === "PlayerSpawn");
+      this.x = spawnPoint.x
+      this.y = spawnPoint.y
+    }
 }
