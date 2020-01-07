@@ -4,6 +4,7 @@ class PickupParent extends Phaser.Physics.Arcade.Sprite {
 	    this.scene = scene;
 	    this.scene.add.existing(this);
 	    this.scene.physics.add.existing(this);
+        this.setDepth(0);
 	    this.body.immovable=true;
 	    this.body.setCollideWorldBounds(true);
   	}

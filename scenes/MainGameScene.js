@@ -34,6 +34,8 @@ class MainGameScene extends Phaser.Scene{
 
 		this.physics.add.collider(this.player, upperWallsLayer);
       	this.physics.add.collider(this.player, lowerWallsLayer);
+      	var pickup = this.physics.add.collider(this.player, key, key.pickup);
+      	pickup.setName("keyPickup");
 
 	}
 	//update assets
