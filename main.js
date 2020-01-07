@@ -8,12 +8,13 @@ var config = {
         arcade: {
             // debug: true,
             //gravity: { y: 300 }
-            gravity: { y: 0 } // Top down game, so no gravity
+            // Top down game, so no gravity is needed
+            gravity: { y: 0 }
         }
     },
     scene:[MainMenuScene,MainGameScene]
 };
 
 
-// create zgame object from the config object
+// create game object from the config object
 var game = new Phaser.Game(config);
