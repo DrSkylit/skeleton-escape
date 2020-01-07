@@ -10,6 +10,7 @@ class PlayerParent extends Phaser.Physics.Arcade.Sprite {
 	    this.body.immovable=true;
 	    this.body.setCollideWorldBounds(true);
         this.cursors = this.scene.input.keyboard.createCursorKeys();
+        this.setDepth(1);
 	    this.createAnimations();
 	    this.playIdleAnimation();
   	}

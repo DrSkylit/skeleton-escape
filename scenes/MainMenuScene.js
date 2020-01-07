@@ -11,6 +11,7 @@ class MainMenuScene extends Phaser.Scene{
 	    //atlas
 	    this.load.atlas('playerAtlas', 'assets/atlas/player/playersSheet.png', 'assets/atlas/player/playersSheet.json');
 	    this.load.atlas('enemyAtlas', 'assets/atlas/enemies/enemySheet.png', 'assets/atlas/enemies/enemySheet.json');
+	    this.load.atlas('pickupAtlas', 'assets/atlas/pickups/pickupSheet.png', 'assets/atlas/pickups/pickupSheet.json');
 	}
 	create(){
 
@@ -35,6 +36,9 @@ class MainMenuScene extends Phaser.Scene{
 
 		var player = new Skeleton(this);
 		player.setStartingPosition(map);
+
+		var key = new Key(this);
+		key.setStartingPosition(map);
 
 		var enemiesGroup = this.physics.add.group();
 		for (var i = 0; i < 10; i++) {

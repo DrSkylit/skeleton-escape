@@ -7,6 +7,7 @@ class EnemyParent extends Phaser.Physics.Arcade.Sprite {
         this.scene.add.existing(this);
         this.scene.physics.add.existing(this);
         this.body.setCollideWorldBounds(true);
+        this.setDepth(1);
         this.playIdleAnimation();
         this.setVelocity();
         this.setBounce();
@@ -25,7 +26,7 @@ class EnemyParent extends Phaser.Physics.Arcade.Sprite {
     }
 
     setStartingPosition(map){
-        const enemySpawnPoint = map.findObject("spawner", obj => obj.name === "enemySpawner");
+        const enemySpawnPoint = map.findObject("spawner", obj => obj.name === "areaSpawner");
         this.x = Math.floor(Math.random() * enemySpawnPoint.width)+enemySpawnPoint.x;
         this.y = Math.floor(Math.random() * enemySpawnPoint.height)+enemySpawnPoint.y;
     }
