@@ -9,6 +9,9 @@ class MainGameScene extends Phaser.Scene{
 
 	// create assets
 	create(){
+		// hides mouse cursor when on the canvas 
+		let canvas = this.sys.canvas;
+		canvas.style.cursor = 'none';
 		//  sets main camera to have a zoom
       	this.cameras.main.setZoom(1.5);
 

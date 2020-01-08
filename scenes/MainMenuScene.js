@@ -14,6 +14,9 @@ class MainMenuScene extends Phaser.Scene{
 	    this.load.atlas('pickupAtlas', 'assets/atlas/pickups/pickupSheet.png', 'assets/atlas/pickups/pickupSheet.json');
 	}
 	create(){
+		// hides mouse cursor when on the canvas 
+		let canvas = this.sys.canvas;
+		canvas.style.cursor = 'none';
 		// grabs tilemap and tileset image
 		const map = this.make.tilemap({ key: "mainMenu" });
 	    const tileset = map.addTilesetImage("skeletonEscapeTileset", "tileMapImage");
