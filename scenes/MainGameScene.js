@@ -40,9 +40,8 @@ class MainGameScene extends Phaser.Scene{
 		// adds who collides with who 
 		this.physics.add.collider(this.player, upperWallsLayer);
       	this.physics.add.collider(this.player, lowerWallsLayer);
-      	this.physics.add.collider(key,doorClosedLayer,key.openDoor);
-      	var closedDoor = this.physics.add.collider(this.player, doorClosedLayer);
-      	var pickup = this.physics.add.collider(this.player, key, key.pickup);
+      	var closedDoor = this.physics.add.collider(this.player, doorClosedLayer,this.player.openDoorCollision);
+      	var pickup = this.physics.add.collider(this.player, key, this.player.keyPickupCollision);
       	// sets name of some collisions to be accesed later
       	pickup.setName("keyPickup");
       	closedDoor.setName("closedDoor");
