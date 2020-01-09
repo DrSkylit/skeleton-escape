@@ -63,6 +63,5 @@ class MainMenuScene extends Phaser.Scene{
 		if (this.cursors.space.isDown){
 			this.scene.start('MainGame');
     	}
-
 	}
 }
