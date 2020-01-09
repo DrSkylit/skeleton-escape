@@ -33,21 +33,33 @@ class MainGameScene extends Phaser.Scene{
 	    upperWallsLayer.setCollisionByProperty({ collides: true });
       	lowerWallsLayer.setCollisionByProperty({ collides: true });
       	doorClosedLayer.setCollisionByProperty({ collides: true });
+      	doorOpenLayer.setCollisionByProperty({ collides: true });
 
       	// add player and eneimes and pickups and sets their starting position
 		this.player = new Skeleton(this);
 		this.player.setStartingPosition(map);
 		var key = new Key(this);
 		key.setStartingPosition(map);
+		var enemiesGroup = this.physics.add.group();
+		for (var i = 0; i < 10; i++) {
+			var tinyZombie = new TinyZombie(this,enemiesGroup);
+			tinyZombie.setStartingPosition(map);
+		}
 
 		// adds who collides with who 
 		this.physics.add.collider(this.player, upperWallsLayer);
       	this.physics.add.collider(this.player, lowerWallsLayer);
-      	var closedDoor = this.physics.add.collider(this.player, doorClosedLayer,this.player.openDoorCollision);
-      	var pickup = this.physics.add.collider(this.player, key, this.player.keyPickupCollision);
+		this.physics.add.collider(this.player, enemiesGroup,enemyCollision);
+      	var closedDoor = this.physics.add.collider(this.player, doorClosedLayer,openDoorCollision);
+      	var pickup = this.physics.add.collider(this.player, key, keyPickupCollision);
       	// sets name of some collisions to be accesed later
       	pickup.setName("keyPickup");
       	closedDoor.setName("closedDoor");
+      	this.physics.add.collider(enemiesGroup, upperWallsLayer);
+      	this.physics.add.collider(enemiesGroup, lowerWallsLayer);
+      	this.physics.add.collider(enemiesGroup, doorClosedLayer);
+      	this.physics.add.collider(enemiesGroup, doorOpenLayer);
+      	this.physics.add.collider(enemiesGroup, enemiesGroup);
 	}	
 	//update assets
 	update(){

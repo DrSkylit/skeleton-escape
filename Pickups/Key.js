@@ -2,7 +2,6 @@ class Key extends PickupParent{
 	constructor (scene) {
 	    super(0,0,scene,"pickupAtlas","key.png");
 	    this.picked = false;
-	    this.player = null;
 	}
 
 	update(time, delta){

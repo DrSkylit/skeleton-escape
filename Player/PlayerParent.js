@@ -2,7 +2,7 @@ class PlayerParent extends Phaser.Physics.Arcade.Sprite {
   	constructor (x,y,scene,textureKey,image) {
 	    super(scene,x,y,textureKey,image);
 	    this.scene = scene;
-	    this.life = 3;
+	    this.life = 6;
         this.vX = 100;
         this.vY = 100;
         this.hasKey = false;
@@ -15,9 +15,6 @@ class PlayerParent extends Phaser.Physics.Arcade.Sprite {
         this.setDepth(1);
 	    this.createAnimations();
 	    this.playIdleAnimation();
-  	}
-  	setLife(life){
-  		this.life = life; 
   	}
 
   	createAnimations(){
@@ -38,32 +35,9 @@ class PlayerParent extends Phaser.Physics.Arcade.Sprite {
       this.y = spawnPoint.y
     }
 
-    keyPickupCollision(player,key){
-        var pickupCollision = player.scene.physics.world.colliders.getActive().find(function(i){
-            return i.name == 'keyPickup'
-        })
-        key.picked = true;
-        player.hasKey = true;
-        player.key = key;
-        key.x = player.x;
-        key.y = player.y;
-        player.scene.physics.world.removeCollider(pickupCollision);
-    }
-
-    openDoorCollision(player,door){
-        player.hasKey = false;
-        door.layer.tilemapLayer.setAlpha(0);
-        var closedDoorCollision = player.scene.physics.world.colliders.getActive().find(function(i){
-            return i.name == 'closedDoor'
-        })
-        player.scene.physics.world.removeCollider(closedDoorCollision);
-        player.key.destroy();
-    }
-
     update(time, delta){
         //pickups
         if(this.hasKey == true){
-            this.key.body.velocity = this.body.velocity;
             this.key.x = this.x;
             this.key.y = this.y;
         }
