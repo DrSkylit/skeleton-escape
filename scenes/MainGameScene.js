@@ -53,6 +53,5 @@ class MainGameScene extends Phaser.Scene{
 	update(){
 		// center the camera on the player
 		this.cameras.main.centerOn(this.player.x,this.player.y);
-
 	}
 }
