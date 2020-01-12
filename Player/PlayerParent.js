@@ -35,6 +35,14 @@ class PlayerParent extends Phaser.Physics.Arcade.Sprite {
       this.y = spawnPoint.y
     }
 
+    setPlayerHudElements(){
+        this.scene.events.emit('player_set_hearts', this.getLife());
+    }
+
+    getLife(){
+        return this.life;
+    }
+
     update(time, delta){
         //pickups
         if(this.hasKey == true){

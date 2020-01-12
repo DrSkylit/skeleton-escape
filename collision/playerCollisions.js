@@ -1,5 +1,4 @@
 keyPickupCollision = function(player,key){
-    console.log("sdf");
         var pickupCollision = player.scene.physics.world.colliders.getActive().find(function(i){
             return i.name == 'keyPickup'
         })
@@ -24,18 +23,19 @@ openDoorCollision = function(player,door){
 }
 
 enemyCollision = function(player,enemy){
-        var pickup = player.scene.physics.add.collider(player, player.key, keyPickupCollision);
-        const map = player.scene.make.tilemap({ key: "mainGame" });
-        pickup.setName("keyPickup");
-        enemy.destroy();
-        if(player.hasKey){
-            player.hasKey = false;
-            player.key.picked = false;
-            player.key.body.setVelocityY(0);
-            player.key.body.setVelocityX(0);
-            player.key.x = player.x;
-            player.key.y = player.y;
-        }
-        player.setStartingPosition(map);
-        player.life--;
+    var pickup = player.scene.physics.add.collider(player, player.key, keyPickupCollision);
+    const map = player.scene.make.tilemap({ key: "mainGame" });
+    pickup.setName("keyPickup");
+    enemy.destroy();
+    if(player.hasKey){
+        player.hasKey = false;
+        player.key.picked = false;
+        player.key.body.setVelocityY(0);
+        player.key.body.setVelocityX(0);
+        player.key.x = player.x;
+        player.key.y = player.y;
+    }
+    player.setStartingPosition(map);
+    player.life--;
+    player.scene.events.emit('player_damage_taken', player.getLife());
 }

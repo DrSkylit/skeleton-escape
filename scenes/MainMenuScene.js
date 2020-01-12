@@ -8,6 +8,8 @@ class MainMenuScene extends Phaser.Scene{
 	    this.load.image("tileMapImage", "assets/tilemap/skeletonEscapeTileset.png");
 	    this.load.tilemapTiledJSON("mainMenu", "assets/tilemap/skeletonEscapeMainMenu.json");
 	    this.load.tilemapTiledJSON("mainGame", "assets/tilemap/skeletonEscapeMap.json");
+	    this.load.tilemapTiledJSON("hud", "assets/tilemap/hudMap.json");
+
 	    //load all atlas
 	    this.load.atlas('playerAtlas', 'assets/atlas/player/playersSheet.png', 'assets/atlas/player/playersSheet.json');
 	    this.load.atlas('enemyAtlas', 'assets/atlas/enemies/enemySheet.png', 'assets/atlas/enemies/enemySheet.json');
@@ -61,6 +63,8 @@ class MainMenuScene extends Phaser.Scene{
 	update(){
 		// if space is pressed change scene to start game
 		if (this.cursors.space.isDown){
+			// launch the hud scene
+			this.scene.launch('hud');
 			this.scene.start('MainGame');
     	}
 	}

@@ -38,6 +38,7 @@ class MainGameScene extends Phaser.Scene{
       	// add player and eneimes and pickups and sets their starting position
 		this.player = new Skeleton(this);
 		this.player.setStartingPosition(map);
+		this.player.setPlayerHudElements();
 		var key = new Key(this);
 		key.setStartingPosition(map);
 		var enemiesGroup = this.physics.add.group();
