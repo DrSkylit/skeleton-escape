@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="60" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="13">
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="60" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="38">
  <editorsettings>
   <export target="skeletonEscapeMainMenu.json" format="json"/>
  </editorsettings>
@@ -4848,7 +4848,18 @@
   <object id="7" x="1152" y="224"/>
   <object id="10" name="areaSpawner" x="32" y="64" width="896" height="464"/>
  </objectgroup>
- <objectgroup id="9" name="mainMenuText" locked="1">
+ <objectgroup id="11" name="mainMenuItems">
+  <object id="23" name="startBtn" x="368" y="336" width="240" height="51">
+   <text fontfamily="Alagard" pixelsize="48" color="#ffffff" halign="center" valign="center">New Game</text>
+  </object>
+  <object id="24" name="howToBtn" x="368" y="416" width="240" height="51">
+   <text fontfamily="Alagard" pixelsize="48" color="#ffffff" halign="center">How To</text>
+  </object>
+  <object id="25" name="settingsBtn" x="368" y="496" width="240" height="51">
+   <text fontfamily="Alagard" pixelsize="48" color="#ffffff" halign="center">Settings</text>
+  </object>
+ </objectgroup>
+ <objectgroup id="9" name="mainMenuText">
   <object id="6" name="GameTitle" x="128" y="80" width="720" height="96">
    <text fontfamily="Alagard" pixelsize="96" color="#ffffff" kerning="0">Skeleton Escape</text>
   </object>

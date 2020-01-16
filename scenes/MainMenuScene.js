@@ -38,7 +38,13 @@ class MainMenuScene extends Phaser.Scene{
 
       	// grabs text from tilemap object called GameTitle and adds it canvas
 	    const gameTitle = map.findObject("mainMenuText", obj => obj.name === "GameTitle");
-	    this.add.text(gameTitle.x, gameTitle.y, gameTitle.text.text,{ fontFamily: gameTitle.text.fontfamily, fontSize: gameTitle.text.pixelsize, color:gameTitle.text.color});
+	    this.add.text(gameTitle.x, gameTitle.y, gameTitle.text.text,{ fontFamily: gameTitle.text.fontfamily, fontSize: gameTitle.text.pixelsize, color:gameTitle.text.color,align:'center',fixedWidth:gameTitle.width,fixedheight:gameTitle.height});
+	    const startBtn = map.findObject("mainMenuItems", obj => obj.name === "startBtn");
+	    this.add.text(startBtn.x, startBtn.y, startBtn.text.text,{ fontFamily: startBtn.text.fontfamily, fontSize: startBtn.text.pixelsize, color:startBtn.text.color,align:'center',fixedWidth:startBtn.width});
+	    const howToBtn = map.findObject("mainMenuItems", obj => obj.name === "howToBtn");
+	    var blah = this.add.text(howToBtn.x, howToBtn.y, howToBtn.text.text,{ fontFamily: howToBtn.text.fontfamily, fontSize: howToBtn.text.pixelsize, color:howToBtn.text.color,align:'center',fixedWidth:howToBtn.width});
+	    const settingsBtn = map.findObject("mainMenuItems", obj => obj.name === "settingsBtn");
+	    this.add.text(settingsBtn.x, settingsBtn.y, settingsBtn.text.text,{ fontFamily: settingsBtn.text.fontfamily, fontSize: settingsBtn.text.pixelsize, color:settingsBtn.text.color,align:'center',fixedWidth:settingsBtn.width});
 
 	    // sets cursor keys for use later 
 		this.cursors = this.input.keyboard.createCursorKeys();
