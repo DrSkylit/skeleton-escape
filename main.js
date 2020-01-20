@@ -12,7 +12,7 @@ var config = {
             gravity: { y: 0 }
         }
     },
-    scene:[MainMenuScene,MainGameScene,hudScene]
+    scene:[LoaderScene,MainMenuScene,MainGameScene,HudScene]
 };
 
 

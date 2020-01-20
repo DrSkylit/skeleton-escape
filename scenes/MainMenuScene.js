@@ -4,16 +4,7 @@ class MainMenuScene extends Phaser.Scene{
 		var cursors;
 	}
 	preload(){
-		// load all tilemaps
-	    this.load.image("tileMapImage", "assets/tilemap/skeletonEscapeTileset.png");
-	    this.load.tilemapTiledJSON("mainMenu", "assets/tilemap/skeletonEscapeMainMenu.json");
-	    this.load.tilemapTiledJSON("mainGame", "assets/tilemap/skeletonEscapeMap.json");
-	    this.load.tilemapTiledJSON("hud", "assets/tilemap/hudMap.json");
 
-	    //load all atlas
-	    this.load.atlas('playerAtlas', 'assets/atlas/player/playersSheet.png', 'assets/atlas/player/playersSheet.json');
-	    this.load.atlas('enemyAtlas', 'assets/atlas/enemies/enemySheet.png', 'assets/atlas/enemies/enemySheet.json');
-	    this.load.atlas('pickupAtlas', 'assets/atlas/pickups/pickupSheet.png', 'assets/atlas/pickups/pickupSheet.json');
 	}
 	create(){
 		// hides mouse cursor when on the canvas 

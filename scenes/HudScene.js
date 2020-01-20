@@ -1,4 +1,4 @@
-class hudScene extends Phaser.Scene {
+class HudScene extends Phaser.Scene {
 
     constructor (){
         super('hud');
