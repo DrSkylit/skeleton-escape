@@ -24,35 +24,23 @@ class LoaderScene extends Phaser.Scene {
         var width = this.cameras.main.width;
         var height = this.cameras.main.height;
 
-        var loadingText = self.make.text({
-            x: width / 2,
-            y: height / 2 - 20,
-            text: 'Loading...',
-            style: {
-                font: '20px monospace',
-                fill: '#ffffff'
-            }
+        var loadingText = this.add.text(width/2,(height/2)-20,"loading...",{
+            fontFamily:'Alagard',
+            fontSize: '30px',
+            fill: '#ffffff'
         });
 
-        var percentText = this.make.text({
-            x: width / 2,
-            y: height / 2 + 25,
-            text: '0%',
-            style: {
-                font: '18px monospace',
-                fill: '#ffffff'
-            }
+        var percentText = this.add.text(width/2,(height/2)+25,"0%",{
+            fontFamily:'Alagard',
+            fontSize: '25px',
+            fill: '#ffffff'
         });
 
-        var assetText = this.make.text({
-            x: width / 2,
-            y: height / 2 + 70,
-            text: '',
-            style: {
-                font: '18px monospace',
-                fill: '#ffffff'
-            }
-        });
+        var assetText = this.add.text(width/2,(height/2)+70,"",{
+            fontFamily:'Alagard',
+            fontSize: '25px',
+            fill: '#ffffff'
+        })
 
         progressBox.fillStyle(0x222222, 0.8);
         progressBox.fillRect(width/2-160, height/2, 320, 50);
