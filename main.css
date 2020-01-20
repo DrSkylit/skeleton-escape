@@ -1,0 +1,13 @@
+.alagard-loader{
+	font-family:Alagard; 
+	position:absolute; 
+	left:-1000px; 
+	visibility:hidden;
+}
+
+@font-face {
+	font-family: Alagard;
+	src: url('assets/text/alagard.ttf');
+	font-weight:400;
+	font-weight:normal;
+}﻿
