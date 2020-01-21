@@ -5,6 +5,7 @@ class MainGameScene extends Phaser.Scene{
 	}
 	preload(){
 		// sets any preloaded assets 
+		this.load.scenePlugin('AnimatedTiles', 'plugins/phaser-animated-tiles/dist/AnimatedTiles.js', 'animatedTiles', 'animatedTiles');
 	}
 
 	// create assets
@@ -21,8 +22,10 @@ class MainGameScene extends Phaser.Scene{
 
 	    // create static layers from tileMap
 	    const lowerFloorLayer = map.createStaticLayer("floor_layer0", tileset, 0, 0);
+	    map.createDynamicLayer("animated_floor_layer", tileset, 0, 0);
 	    const upperFloorLayer = map.createStaticLayer("floor_layer1", tileset, 0, 0);
 	    const lowerWallsLayer = map.createStaticLayer("wall_layer0", tileset, 0, 0);
+	    map.createDynamicLayer("animated_wall_layer", tileset, 0, 0);
 	    const upperWallsLayer = map.createStaticLayer("wall_layer1", tileset, 0, 0);
 	    // sets depth so it appears that it is above the player
 	    upperWallsLayer.setDepth(99);
@@ -61,6 +64,9 @@ class MainGameScene extends Phaser.Scene{
       	this.physics.add.collider(enemiesGroup, doorClosedLayer);
       	this.physics.add.collider(enemiesGroup, doorOpenLayer);
       	this.physics.add.collider(enemiesGroup, enemiesGroup);
+
+      	// start animated tile movment
+      	this.sys.animatedTiles.init(map);
 	}	
 	//update assets
 	update(){

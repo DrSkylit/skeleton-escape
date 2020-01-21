@@ -1,0 +1,3 @@
+[submodule "plugins/phaser-animated-tiles"]
+	path = plugins/phaser-animated-tiles
+	url = git@github.com:nkholski/phaser-animated-tiles.git

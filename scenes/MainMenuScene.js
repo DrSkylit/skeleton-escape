@@ -4,7 +4,7 @@ class MainMenuScene extends Phaser.Scene{
 		var cursors;
 	}
 	preload(){
-
+		this.load.scenePlugin('AnimatedTiles', 'plugins/phaser-animated-tiles/dist/AnimatedTiles.js', 'animatedTiles', 'animatedTiles');
 	}
 	create(){
 		// hides mouse cursor when on the canvas 
@@ -14,10 +14,13 @@ class MainMenuScene extends Phaser.Scene{
 		const map = this.make.tilemap({ key: "mainMenu" });
 	    const tileset = map.addTilesetImage("skeletonEscapeTileset", "tileMapImage");
 
+
 	    // create static layers from tileMap
 	    const lowerFloorLayer = map.createStaticLayer("floor_layer0", tileset, 0, 0);
+	   	map.createDynamicLayer("animated_floor_layer", tileset, 0, 0);
 	    const upperFloorLayer = map.createStaticLayer("floor_layer1", tileset, 0, 0);
 	    const lowerWallsLayer = map.createStaticLayer("wall_layer0", tileset, 0, 0);
+	    map.createDynamicLayer("animated_wall_layer", tileset, 0, 0);
 	    const upperWallsLayer = map.createStaticLayer("wall_layer1", tileset, 0, 0);
 	    const doorClosedLayer = map.createStaticLayer("door_open", tileset, 0, 0);
 	    const doorOpenLayer = map.createStaticLayer("door_closed", tileset, 0, 0);
@@ -56,6 +59,9 @@ class MainMenuScene extends Phaser.Scene{
       	this.physics.add.collider(enemiesGroup, lowerWallsLayer);
       	this.physics.add.collider(enemiesGroup, doorClosedLayer);
       	this.physics.add.collider(enemiesGroup, enemiesGroup);
+
+      	//start animated tile movment
+      	this.sys.animatedTiles.init(map);
 	}
 	update(){
 		// if space is pressed change scene to start game
