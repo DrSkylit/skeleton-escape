@@ -17,7 +17,7 @@ after cloning you will need to run two commands to get the submodules installed
 * git submodule init
 * git submodule update
 
-If you download the zip you will need to add the phaser-animated-tiles yourself to the plugins folder
+If you download the zip you will need to add the phaser-animated-tiles to the plugins folder yourself
 
 ## Built With
 
