@@ -4,20 +4,19 @@ This is a small game built with phaser 3 that follows a skeleton trying to escap
 
 ## Getting Started
 
-	Because this project uses git submodules just downloading the zip file will not allow you to download the submodules.
-	So you should clone it.
+Because this project uses git submodules downloading as a zip file will not allow you to download the submodules(you will have to do this on your own). So you should clone it.
 
 ### Prerequisites
 
-	node 
-		-http-server (https://www.npmjs.com/package/http-server)
+node 
+	-http-server (https://www.npmjs.com/package/http-server)
 
 ### Installing
 
-	after cloning you will need to run two commands to get the submodules installed 
-		- git submodule init
-		- git submodule update
-	If you download the zip you will need to add the phaser-animated-tiles yourself to the plugins folder
+after cloning you will need to run two commands to get the submodules installed 
+	- git submodule init
+	- git submodule update
+If you download the zip you will need to add the phaser-animated-tiles yourself to the plugins folder
 
 ## Built With
 
