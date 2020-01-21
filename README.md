@@ -9,13 +9,13 @@ Because this project uses git submodules downloading as a zip file will not allo
 ### Prerequisites
 
 node 
-	* http-server (https://www.npmjs.com/package/http-server)
+* http-server (https://www.npmjs.com/package/http-server)
 
 ### Installing
 
 after cloning you will need to run two commands to get the submodules installed 
-	* git submodule init
-	* git submodule update
+* git submodule init
+* git submodule update
 If you download the zip you will need to add the phaser-animated-tiles yourself to the plugins folder
 
 ## Built With
