@@ -15,9 +15,6 @@ This is a small game built with phaser 3 that follows a skeleton trying to escap
 ### Installing
 
 	after cloning you will need to run two commands to get the submodules installed 
-	Submodules
-		- phaser-animated-tiles
-	Runhttps://phaser.io/phaser3
 		- git submodule init
 		- git submodule update
 	If you download the zip you will need to add the phaser-animated-tiles yourself to the plugins folder
@@ -25,12 +22,8 @@ This is a small game built with phaser 3 that follows a skeleton trying to escap
 ## Built With
 
 * [Phaser 3](https://phaser.io/phaser3) - The game engine used
-* [Animated Tiles](https://github.com/nkholski/phaser-animated-tiles) - Use of tiled animated tiles in phaser
-
-
-## Authors
-
-* **Chris Dolce** - *All work* - [DrSkylit](https://github.com/DrSkylit)
+* [Tiled](https://www.mapeditor.org/) - Map editor
+* [Animated Tiles](https://github.com/nkholski/phaser-animated-tiles) - Submodule used to animate tiles built in Tiled
 
 ## License
 
