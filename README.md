@@ -27,6 +27,7 @@ If you download the zip you will need to add the phaser-animated-tiles to the pl
 
 ## License
 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
