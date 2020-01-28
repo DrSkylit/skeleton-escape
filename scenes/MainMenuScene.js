@@ -7,6 +7,7 @@ class MainMenuScene extends Phaser.Scene{
 		this.load.scenePlugin('AnimatedTiles', 'plugins/phaser-animated-tiles/dist/AnimatedTiles.js', 'animatedTiles', 'animatedTiles');
 	}
 	create(){
+
 		// hides mouse cursor when on the canvas 
 		let canvas = this.sys.canvas;
 		canvas.style.cursor = 'none';
@@ -66,6 +67,7 @@ class MainMenuScene extends Phaser.Scene{
 	update(){
 		// if space is pressed change scene to start game
 		if (this.cursors.space.isDown){
+			this.sound.add('selectSound').play();
 			// launch the hud scene
 			this.scene.launch('hud');
 			this.scene.start('MainGame');

@@ -4,7 +4,7 @@ This is a small game built with phaser 3 that follows a skeleton trying to escap
 
 ## Getting Started
 
-Because this project uses git submodules downloading as a zip file will not allow you to download the submodules(you will have to do this on your own). So you should clone it.
+Because this project uses git submodules downloading as a zip file will not allow you to download the submodules(you will have to do this on your own). So you should clone it if you want a more seamless build.
 
 ### Prerequisites
 
@@ -31,5 +31,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-* **0x72** - Tile set, animations, sprites (https://0x72.itch.io/dungeontileset-ii)
-* **Hewett Tsoi** - Font (https://www.dafont.com/alagard.font) 
+* **0x72** - tile set, animations, sprites (https://0x72.itch.io/dungeontileset-ii)
+* **Hewett Tsoi** - Font (https://www.dafont.com/alagard.font)
+* **VGcomposer** - background music (https://vgcomposer.itch.io/action-rpg-music-free) 
+* **Filippo Vicarelli** - Door SFX (https://www.noiseforfun.com/2013-sound-effects/bump-wood)

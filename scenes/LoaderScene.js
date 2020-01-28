@@ -17,6 +17,14 @@ class LoaderScene extends Phaser.Scene {
         this.load.atlas('enemyAtlas', 'assets/atlas/enemies/enemySheet.png', 'assets/atlas/enemies/enemySheet.json');
         this.load.atlas('pickupAtlas', 'assets/atlas/pickups/pickupSheet.png', 'assets/atlas/pickups/pickupSheet.json');
 
+        //load Sounds
+        this.load.audio('damageSound', 'assets/sounds/damageTaken.wav');
+        this.load.audio('keyPickupSound', 'assets/sounds/keyPickup.wav');
+        this.load.audio('selectSound', 'assets/sounds/select.wav');
+        this.load.audio('openDoor', 'assets/sounds/openDoor.wav');
+
+        this.load.audio('backgroundMusic', 'assets/sounds/castleMusic.wav');
+
         // add graphics for loader bar
         var progressBar = this.add.graphics();
         var progressBox = this.add.graphics();

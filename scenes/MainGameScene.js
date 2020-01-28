@@ -10,6 +10,14 @@ class MainGameScene extends Phaser.Scene{
 
 	// create assets
 	create(){
+		let musicConfig = {
+			mute: false,
+			volume: .7,
+			rate:1,
+			loop:true,
+			delay:1
+		};
+		this.sound.add('backgroundMusic').play(musicConfig);
 		// hides mouse cursor when on the canvas 
 		let canvas = this.sys.canvas;
 		canvas.style.cursor = 'none';
