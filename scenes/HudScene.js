@@ -46,6 +46,8 @@ class HudScene extends Phaser.Scene {
 
         this.input.keyboard.on('keydown_P', function (event) {
             if(this.scene.scene.isPaused("MainGame")){
+                // get the main game scene
+                this.scene.scene.get("MainGame").input.keyboard.resetKeys();
                 this.scene.scene.run("MainGame");
             }else{
                 this.scene.scene.pause("MainGame");
