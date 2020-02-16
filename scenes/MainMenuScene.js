@@ -70,7 +70,7 @@ class MainMenuScene extends Phaser.Scene{
 			this.sound.play("selectSound");
 			// launch the hud scene
 			this.scene.launch('hud');
-			this.scene.start('MainGame',{level:"level_1"});
+			this.scene.start('MainGame',{level:"level_1",playerLife:6});
     	}
 	}
 }

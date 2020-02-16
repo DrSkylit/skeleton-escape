@@ -56,9 +56,39 @@
          "visible":true,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":3,
+         "name":"levelText",
+         "objects":[
+                {
+                 "height":96,
+                 "id":7,
+                 "name":"levelText",
+                 "rotation":0,
+                 "text":
+                    {
+                     "color":"#ffffff",
+                     "fontfamily":"Alagard",
+                     "pixelsize":96,
+                     "text":"Level 1",
+                     "wrap":true
+                    },
+                 "type":"",
+                 "visible":true,
+                 "width":368,
+                 "x":288,
+                 "y":96
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":3,
- "nextobjectid":7,
+ "nextlayerid":4,
+ "nextobjectid":8,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.3.1",

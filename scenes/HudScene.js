@@ -12,6 +12,7 @@ class HudScene extends Phaser.Scene {
     }
 
     create (){
+        self = this;
         // create background music in hud scene so when the game scene gets reset the music doesnt keep playing over itself
         let musicConfig = {
             mute: false,
@@ -25,6 +26,21 @@ class HudScene extends Phaser.Scene {
         const map = this.make.tilemap({ key: "hud" });
         const tileset = map.addTilesetImage("skeletonEscapeTileset", "tileMapImage");
         var mainGame = this.scene.get("MainGame");
+
+        mainGame.events.on("set_level_hud",function(level) {
+            var level = level.replace("_", " ");
+            const levelTextData = map.findObject("levelText", obj => obj.name === "levelText");
+            var levelText = self.add.text(levelTextData.x, levelTextData.y,level,{ fontFamily: levelTextData.text.fontfamily, fontSize: levelTextData.text.pixelsize, color:levelTextData.text.color,align:'center',fixedWidth:levelTextData.width,fixedheight:levelTextData.height});
+            self.tweens.add({
+                    targets: levelText,
+                    alpha: 0.0,
+                    delay: 2000,
+                    duration: 1000,
+                    onComplete: function(){
+                        levelText.destroy();
+                    } 
+            });
+        })
 
         mainGame.events.on('player_set_hearts',function(life){
             const heart0Location = map.findObject("hudHealth", obj => obj.name === "heart0");

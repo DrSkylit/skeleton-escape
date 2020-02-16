@@ -12,7 +12,7 @@ class MainGameScene extends Phaser.Scene{
 	create(data){
 		// get Level
 		var level = data["level"];
-
+		this.events.emit('set_level_hud',level);
 		// hides mouse cursor when on the canvas 
 		let canvas = this.sys.canvas;
 		canvas.style.cursor = 'none';
