@@ -1,5 +1,5 @@
 keyPickupCollision = function(player,key){
-    player.scene.sound.add('keyPickupSound').play();
+    player.scene.sound.play('keyPickupSound');
     var pickupCollision = player.scene.physics.world.colliders.getActive().find(function(i){
         return i.name == 'keyPickup'
     })
@@ -13,7 +13,7 @@ keyPickupCollision = function(player,key){
 
 openDoorCollision = function(player,door){
     if(player.hasKey){
-        player.scene.sound.add('openDoor').play();
+        player.scene.sound.play("openDoor");
         player.hasKey = false;
         door.layer.tilemapLayer.setAlpha(0);
         var closedDoorCollision = player.scene.physics.world.colliders.getActive().find(function(i){
@@ -21,11 +21,16 @@ openDoorCollision = function(player,door){
         })
         player.scene.physics.world.removeCollider(closedDoorCollision);
         player.key.destroy();
+
+        var level = player.scene.sys.settings.data.level;
+        var lvlNumber = parseInt(level.charAt(level.length-1));
+        lvlNumber = lvlNumber + 1;
+        player.scene.scene.restart({level:"level_" + lvlNumber,playerLife:player.getLife()});
     }
 }
 
 enemyCollision = function(player,enemy){
-    let damageSound = player.scene.sound.add('damageSound').play();
+    let damageSound = player.scene.sound.play('damageSound');
     var pickup = player.scene.physics.add.collider(player, player.key, keyPickupCollision);
     const map = player.scene.make.tilemap({ key: "mainGame" });
     pickup.setName("keyPickup");

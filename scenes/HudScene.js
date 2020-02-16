@@ -12,6 +12,16 @@ class HudScene extends Phaser.Scene {
     }
 
     create (){
+        // create background music in hud scene so when the game scene gets reset the music doesnt keep playing over itself
+        let musicConfig = {
+            mute: false,
+            volume: .7,
+            rate:1,
+            loop:true,
+            delay:1
+        };
+        this.sound.add('backgroundMusic').play(musicConfig);
+
         const map = this.make.tilemap({ key: "hud" });
         const tileset = map.addTilesetImage("skeletonEscapeTileset", "tileMapImage");
         var mainGame = this.scene.get("MainGame");
@@ -26,20 +36,27 @@ class HudScene extends Phaser.Scene {
             this.heart0.setScale(1.5);
             this.heart1.setScale(1.5);
             this.heart2.setScale(1.5);
+            var mainGame = this.scene.get("MainGame");
+            mainGame.events.emit('player_damage_taken', life);
         },this);
 
         mainGame.events.on('player_damage_taken',function(life){
-            if(life == 5){
+            if(life <= 5){
                 this.heart2.setTexture("pickupAtlas","ui_heart_half.png");
-            }else if(life == 4){
+            }
+            if(life <= 4){
                 this.heart2.setTexture("pickupAtlas","ui_heart_empty.png");
-            }else if(life == 3){
+            } 
+            if(life <= 3){
                 this.heart1.setTexture("pickupAtlas","ui_heart_half.png");
-            }else if(life == 2){
+            } 
+            if(life <= 2){
                 this.heart1.setTexture("pickupAtlas","ui_heart_empty.png");
-            }else if(life == 1){
+            } 
+            if(life <= 1){
                 this.heart0.setTexture("pickupAtlas","ui_heart_half.png");
-            }else if(life == 0){
+            }
+            if(life <= 0){
                 this.heart0.setTexture("pickupAtlas","ui_heart_empty.png");
             }
         },this);

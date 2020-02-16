@@ -9,15 +9,10 @@ class MainGameScene extends Phaser.Scene{
 	}
 
 	// create assets
-	create(){
-		let musicConfig = {
-			mute: false,
-			volume: .7,
-			rate:1,
-			loop:true,
-			delay:1
-		};
-		this.sound.add('backgroundMusic').play(musicConfig);
+	create(data){
+		// get Level
+		var level = data["level"];
+
 		// hides mouse cursor when on the canvas 
 		let canvas = this.sys.canvas;
 		canvas.style.cursor = 'none';
@@ -48,14 +43,24 @@ class MainGameScene extends Phaser.Scene{
 
       	// add player and eneimes and pickups and sets their starting position
 		this.player = new Skeleton(this);
+		if(data["playerLife"]){
+			this.player.setLife(data["playerLife"]);
+		}
 		this.player.setStartingPosition(map);
 		this.player.setPlayerHudElements();
 		var key = new Key(this);
 		key.setStartingPosition(map);
 		var enemiesGroup = this.physics.add.group();
-		for (var i = 0; i < 10; i++) {
-			var tinyZombie = new TinyZombie(this,enemiesGroup);
-			tinyZombie.setStartingPosition(map);
+
+		for (var property in levels[level]) {
+		  	if (levels[level].hasOwnProperty(property)) {
+		  		if (property == "tinyZombie") {
+					for (var i = 0; i < levels[level][property]; i++) {
+						var tinyZombie = new TinyZombie(this,enemiesGroup);
+						tinyZombie.setStartingPosition(map);
+					}
+		  		}
+		  	}
 		}
 
 		// adds who collides with who 

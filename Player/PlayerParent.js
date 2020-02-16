@@ -39,6 +39,10 @@ class PlayerParent extends Phaser.Physics.Arcade.Sprite {
         this.scene.events.emit('player_set_hearts', this.getLife());
     }
 
+    setLife(life){
+        this.life = life;
+    }
+
     getLife(){
         return this.life;
     }

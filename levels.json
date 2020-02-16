@@ -1,0 +1,29 @@
+levels = {
+	"level_1":{
+         "tinyZombie":10,
+     },
+     "level_2":{
+         "tinyZombie":15
+     },
+     "level_3":{
+         "tinyZombie":20
+     },
+     "level_4":{
+         "tinyZombie":25
+     },
+     "level_5":{
+         "tinyZombie":30
+     },
+     "level_6":{
+         "tinyZombie":40
+     },
+     "level_7":{
+         "tinyZombie":45
+     },
+     "level_8":{
+         "tinyZombie":50
+     },
+     "level_9":{
+         "tinyZombie":60
+     }
+}

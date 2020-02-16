@@ -67,10 +67,10 @@ class MainMenuScene extends Phaser.Scene{
 	update(){
 		// if space is pressed change scene to start game
 		if (this.cursors.space.isDown){
-			this.sound.add('selectSound').play();
+			this.sound.play("selectSound");
 			// launch the hud scene
 			this.scene.launch('hud');
-			this.scene.start('MainGame');
+			this.scene.start('MainGame',{level:"level_1"});
     	}
 	}
 }
