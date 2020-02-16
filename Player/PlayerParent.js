@@ -6,6 +6,7 @@ class PlayerParent extends Phaser.Physics.Arcade.Sprite {
         this.vX = 100;
         this.vY = 100;
         this.hasKey = false;
+        this.allowMovment = true;
         this.key = null;
 	    this.scene.add.existing(this);
 	    this.scene.physics.add.existing(this);
@@ -52,37 +53,40 @@ class PlayerParent extends Phaser.Physics.Arcade.Sprite {
         if(this.hasKey == true){
             this.key.x = this.x;
             this.key.y = this.y;
-        }
+        }  
 
-        // player movment
-        this.body.setVelocityY(0);
-        this.body.setVelocityX(0);
+        if(this.allowMovment){
 
-        if (this.cursors.left.isDown) {
-            this.setFlipX(true);
-            this.body.setVelocityX(-this.vX);
-            this.playWalkingAnimation();
-        } else if (this.cursors.right.isDown) {
-            this.setFlipX(false);
-            this.body.setVelocityX(this.vX);
-            this.playWalkingAnimation();
-        }
-        if (this.cursors.up.isDown) {
-            this.body.setVelocityY(-this.vY);
-              this.playWalkingAnimation();
-        } else if (this.cursors.down.isDown) {
-            this.body.setVelocityY(this.vY);
-            this.playWalkingAnimation();
-        }
+            // player movment
+            this.body.setVelocityY(0);
+            this.body.setVelocityX(0);
 
-        if(this.cursors.left.isUp && this.cursors.right.isUp && this.cursors.up.isUp && this.cursors.down.isUp){
-            // Stop any previous movement from the last frame
-            this.body.setVelocity(0);
-            this.playIdleAnimation();
-        }
+            if (this.cursors.left.isDown) {
+                this.setFlipX(true);
+                this.body.setVelocityX(-this.vX);
+                this.playWalkingAnimation();
+            } else if (this.cursors.right.isDown) {
+                this.setFlipX(false);
+                this.body.setVelocityX(this.vX);
+                this.playWalkingAnimation();
+            }
+            if (this.cursors.up.isDown) {
+                this.body.setVelocityY(-this.vY);
+                  this.playWalkingAnimation();
+            } else if (this.cursors.down.isDown) {
+                this.body.setVelocityY(this.vY);
+                this.playWalkingAnimation();
+            }
 
-        // Normalize and scale the velocity so that player can't move faster along a diagonal
-        this.body.velocity.normalize().scale(this.vX);
+            if(this.cursors.left.isUp && this.cursors.right.isUp && this.cursors.up.isUp && this.cursors.down.isUp){
+                // Stop any previous movement from the last frame
+                this.body.setVelocity(0);
+                this.playIdleAnimation();
+            }
+
+            // Normalize and scale the velocity so that player can't move faster along a diagonal
+            this.body.velocity.normalize().scale(this.vX);
+        }
 
     }
 

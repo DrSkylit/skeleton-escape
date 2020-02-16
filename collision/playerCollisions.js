@@ -25,7 +25,19 @@ openDoorCollision = function(player,door){
         var level = player.scene.sys.settings.data.level;
         var lvlNumber = parseInt(level.charAt(level.length-1));
         lvlNumber = lvlNumber + 1;
-        player.scene.scene.restart({level:"level_" + lvlNumber,playerLife:player.getLife()});
+
+        player.allowMovment = false;
+        player.body.setVelocityY(-player.vY);
+        self.tweens.add({
+            targets: player,
+            alpha: 0.0,
+            delay: 500,
+            duration: 500,
+            completeDelay: 200,
+            onComplete: function(){
+                player.scene.scene.restart({level:"level_" + lvlNumber,playerLife:player.getLife()});
+            } 
+        });
     }
 }
 
