@@ -25,5 +25,9 @@ levels = {
      },
      "level_9":{
          "tinyZombie":60
+     },
+     "level_10":{
+        "elf": 4,
+        "tinyZombie":10
      }
 }

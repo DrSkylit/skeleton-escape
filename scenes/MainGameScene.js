@@ -51,6 +51,7 @@ class MainGameScene extends Phaser.Scene{
 		var key = new Key(this);
 		key.setStartingPosition(map);
 		var enemiesGroup = this.physics.add.group();
+		var elfGroup = this.physics.add.group();
 
 		for (var property in levels[level]) {
 		  	if (levels[level].hasOwnProperty(property)) {
@@ -60,6 +61,13 @@ class MainGameScene extends Phaser.Scene{
 						tinyZombie.setStartingPosition(map);
 					}
 		  		}
+		  		if (property == "elf") {
+					for (var i = 0; i < levels[level][property]; i++) {
+						var elf = new Elf(this,elfGroup);
+						elf.setStartingPosition(map);
+						elf.setAreaEffect(this.player);
+					}
+		  		}
 		  	}
 		}
 
@@ -67,16 +75,20 @@ class MainGameScene extends Phaser.Scene{
 		this.physics.add.collider(this.player, upperWallsLayer);
       	this.physics.add.collider(this.player, lowerWallsLayer);
 		this.physics.add.collider(this.player, enemiesGroup,enemyCollision);
+		this.physics.add.collider(this.player, elfGroup,enemyCollision);
       	var closedDoor = this.physics.add.collider(this.player, doorClosedLayer,openDoorCollision);
       	var pickup = this.physics.add.collider(this.player, key, keyPickupCollision);
       	// sets name of some collisions to be accesed later
       	pickup.setName("keyPickup");
       	closedDoor.setName("closedDoor");
-      	this.physics.add.collider(enemiesGroup, upperWallsLayer);
-      	this.physics.add.collider(enemiesGroup, lowerWallsLayer);
-      	this.physics.add.collider(enemiesGroup, doorClosedLayer);
-      	this.physics.add.collider(enemiesGroup, doorOpenLayer);
+
+      	this.addCollisionWithWalls(enemiesGroup,upperWallsLayer,lowerWallsLayer);
+      	this.addCollisionWithDoors(enemiesGroup, doorClosedLayer,doorOpenLayer);
       	this.physics.add.collider(enemiesGroup, enemiesGroup);
+
+      	this.addCollisionWithWalls(elfGroup,upperWallsLayer,lowerWallsLayer);
+      	this.addCollisionWithDoors(elfGroup, doorClosedLayer,doorOpenLayer);
+      	this.physics.add.collider(elfGroup, elfGroup);
 
       	// start animated tile movment
       	this.sys.animatedTiles.init(map);
@@ -85,5 +97,14 @@ class MainGameScene extends Phaser.Scene{
 	update(){
 		// center the camera on the player
 		this.cameras.main.centerOn(this.player.x,this.player.y);
+	}
+
+	addCollisionWithWalls(group,upperWall,lowerWall){
+		this.physics.add.collider(group, upperWall);
+      	this.physics.add.collider(group, lowerWall);
+	}
+	addCollisionWithDoors(group,closedDoor,openDoor){
+		this.physics.add.collider(group, closedDoor);
+      	this.physics.add.collider(group, openDoor);
 	}
 }

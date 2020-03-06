@@ -59,3 +59,9 @@ enemyCollision = function(player,enemy){
     player.life--;
     player.scene.events.emit('player_damage_taken', player.getLife());
 }
+
+elfAreaCollision = function(area,player){
+    if (player.y < 600){
+        area.scene.physics.moveToObject(area.elf, player, 80);
+    }
+}
