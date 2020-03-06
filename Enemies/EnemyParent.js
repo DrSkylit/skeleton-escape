@@ -25,6 +25,10 @@ class EnemyParent extends Phaser.Physics.Arcade.Sprite {
         console.log("function playWalkingAnimation needs to be called");
     }
 
+    setAreaEffect(){
+        console.log("function setAreaEffect needs to be called");
+    }
+
     setStartingPosition(map){
         const enemySpawnPoint = map.findObject("spawner", obj => obj.name === "areaSpawner");
         this.x = Math.floor(Math.random() * enemySpawnPoint.width)+enemySpawnPoint.x;
@@ -32,9 +36,6 @@ class EnemyParent extends Phaser.Physics.Arcade.Sprite {
     }
 
     setVelocity(){
-        // var vX = (Math.floor(Math.random() * (250-50+1))+50);
-        // var vY = (Math.floor(Math.random() * (250-50+1))+50);
-
         var vX = (Math.floor(Math.random() * (50))+25);
         var vY = (Math.floor(Math.random() * (50))+25);
         // sets negative 50% of the time

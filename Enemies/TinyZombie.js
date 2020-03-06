@@ -1,7 +1,6 @@
 class TinyZombie extends EnemyParent{
   	constructor (scene,group) {
 	    super(0,0,scene,"enemyAtlas","tiny_zombie_idle_anim_f0.png",group);
-
 	}
     createAnimations(){
 		var idleAnim = this.scene.anims.generateFrameNames('enemyAtlas', {

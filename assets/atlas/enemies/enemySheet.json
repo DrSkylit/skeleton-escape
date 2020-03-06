@@ -1,10 +1,346 @@
 {
 	"frames": [
 		{
-			"filename": "tiny_zombie_idle_anim_f0.png",
+			"filename": "elf_f_idle_anim_f0.png",
 			"frame": {
 				"x": 1,
 				"y": 1,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_f_idle_anim_f1.png",
+			"frame": {
+				"x": 19,
+				"y": 1,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_f_idle_anim_f2.png",
+			"frame": {
+				"x": 37,
+				"y": 1,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_f_idle_anim_f3.png",
+			"frame": {
+				"x": 55,
+				"y": 1,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_f_run_anim_f0.png",
+			"frame": {
+				"x": 73,
+				"y": 1,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_f_run_anim_f1.png",
+			"frame": {
+				"x": 1,
+				"y": 31,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_f_run_anim_f2.png",
+			"frame": {
+				"x": 19,
+				"y": 31,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_f_run_anim_f3.png",
+			"frame": {
+				"x": 37,
+				"y": 31,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_m_idle_anim_f0.png",
+			"frame": {
+				"x": 55,
+				"y": 31,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_m_idle_anim_f1.png",
+			"frame": {
+				"x": 73,
+				"y": 31,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_m_idle_anim_f2.png",
+			"frame": {
+				"x": 1,
+				"y": 61,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_m_idle_anim_f3.png",
+			"frame": {
+				"x": 19,
+				"y": 61,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_m_run_anim_f0.png",
+			"frame": {
+				"x": 37,
+				"y": 61,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_m_run_anim_f1.png",
+			"frame": {
+				"x": 55,
+				"y": 61,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_m_run_anim_f2.png",
+			"frame": {
+				"x": 73,
+				"y": 61,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "elf_m_run_anim_f3.png",
+			"frame": {
+				"x": 91,
+				"y": 1,
+				"w": 16,
+				"h": 28
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 28
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 28
+			}
+		},
+		{
+			"filename": "tiny_zombie_idle_anim_f0.png",
+			"frame": {
+				"x": 91,
+				"y": 31,
 				"w": 16,
 				"h": 16
 			},
@@ -24,8 +360,8 @@
 		{
 			"filename": "tiny_zombie_idle_anim_f1.png",
 			"frame": {
-				"x": 19,
-				"y": 1,
+				"x": 91,
+				"y": 49,
 				"w": 16,
 				"h": 16
 			},
@@ -45,8 +381,8 @@
 		{
 			"filename": "tiny_zombie_idle_anim_f2.png",
 			"frame": {
-				"x": 1,
-				"y": 19,
+				"x": 91,
+				"y": 67,
 				"w": 16,
 				"h": 16
 			},
@@ -66,8 +402,8 @@
 		{
 			"filename": "tiny_zombie_idle_anim_f3.png",
 			"frame": {
-				"x": 19,
-				"y": 19,
+				"x": 91,
+				"y": 85,
 				"w": 16,
 				"h": 16
 			},
@@ -87,8 +423,8 @@
 		{
 			"filename": "tiny_zombie_run_anim_f0.png",
 			"frame": {
-				"x": 37,
-				"y": 1,
+				"x": 1,
+				"y": 103,
 				"w": 16,
 				"h": 16
 			},
@@ -108,8 +444,8 @@
 		{
 			"filename": "tiny_zombie_run_anim_f1.png",
 			"frame": {
-				"x": 37,
-				"y": 19,
+				"x": 19,
+				"y": 103,
 				"w": 16,
 				"h": 16
 			},
@@ -129,8 +465,8 @@
 		{
 			"filename": "tiny_zombie_run_anim_f2.png",
 			"frame": {
-				"x": 1,
-				"y": 37,
+				"x": 37,
+				"y": 103,
 				"w": 16,
 				"h": 16
 			},
@@ -150,8 +486,8 @@
 		{
 			"filename": "tiny_zombie_run_anim_f3.png",
 			"frame": {
-				"x": 19,
-				"y": 37,
+				"x": 55,
+				"y": 103,
 				"w": 16,
 				"h": 16
 			},
@@ -175,8 +511,8 @@
 		"image": "spritesheet.png",
 		"format": "RGBA8888",
 		"size": {
-			"w": 54,
-			"h": 54
+			"w": 108,
+			"h": 120
 		},
 		"scale": "1"
 	}
