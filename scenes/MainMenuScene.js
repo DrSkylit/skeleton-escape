@@ -50,16 +50,16 @@ class MainMenuScene extends Phaser.Scene{
 		var key = new Key(this);
 		key.setStartingPosition(map);
 		// creates a physics group so all enemies are treated the exact same when it comes to collisions
-		var enemiesGroup = this.physics.add.group();
+		this.enemiesGroup = this.physics.add.group();
+		var enemyFactory = new EnemyFactory(this,map);
 		for (var i = 0; i < 10; i++) {
-			var tinyZombie = new TinyZombie(this,enemiesGroup);
-			tinyZombie.setStartingPosition(map);
+			enemyFactory.createEnemy('tinyZombie');
 		}
 		// adds who collides with who 
-		this.physics.add.collider(enemiesGroup, upperWallsLayer);
-      	this.physics.add.collider(enemiesGroup, lowerWallsLayer);
-      	this.physics.add.collider(enemiesGroup, doorClosedLayer);
-      	this.physics.add.collider(enemiesGroup, enemiesGroup);
+		this.physics.add.collider(this.enemiesGroup, upperWallsLayer);
+      	this.physics.add.collider(this.enemiesGroup, lowerWallsLayer);
+      	this.physics.add.collider(this.enemiesGroup, doorClosedLayer);
+      	this.physics.add.collider(this.enemiesGroup, this.enemiesGroup);
 
       	//start animated tile movment
       	this.sys.animatedTiles.init(map);

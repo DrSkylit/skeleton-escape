@@ -50,23 +50,14 @@ class MainGameScene extends Phaser.Scene{
 		this.player.setPlayerHudElements();
 		var key = new Key(this);
 		key.setStartingPosition(map);
-		var enemiesGroup = this.physics.add.group();
-		var elfGroup = this.physics.add.group();
-
+		this.enemiesGroup = this.physics.add.group();
+		this.elfGroup = this.physics.add.group();
+		// create enemy factory that creates all enemies
+		var enemyFactory = new EnemyFactory(this,map);
 		for (var property in levels[level]) {
 		  	if (levels[level].hasOwnProperty(property)) {
-		  		if (property == "tinyZombie") {
-					for (var i = 0; i < levels[level][property]; i++) {
-						var tinyZombie = new TinyZombie(this,enemiesGroup);
-						tinyZombie.setStartingPosition(map);
-					}
-		  		}
-		  		if (property == "elf") {
-					for (var i = 0; i < levels[level][property]; i++) {
-						var elf = new Elf(this,elfGroup);
-						elf.setStartingPosition(map);
-						elf.setAreaEffect(this.player);
-					}
+		  		for (var i = 0; i < levels[level][property]; i++) {
+		  			enemyFactory.createEnemy(property);
 		  		}
 		  	}
 		}
@@ -74,21 +65,21 @@ class MainGameScene extends Phaser.Scene{
 		// adds who collides with who 
 		this.physics.add.collider(this.player, upperWallsLayer);
       	this.physics.add.collider(this.player, lowerWallsLayer);
-		this.physics.add.collider(this.player, enemiesGroup,enemyCollision);
-		this.physics.add.collider(this.player, elfGroup,enemyCollision);
+		this.physics.add.collider(this.player, this.enemiesGroup,enemyCollision);
+		this.physics.add.collider(this.player, this.elfGroup,enemyCollision);
       	var closedDoor = this.physics.add.collider(this.player, doorClosedLayer,openDoorCollision);
       	var pickup = this.physics.add.collider(this.player, key, keyPickupCollision);
       	// sets name of some collisions to be accesed later
       	pickup.setName("keyPickup");
       	closedDoor.setName("closedDoor");
 
-      	this.addCollisionWithWalls(enemiesGroup,upperWallsLayer,lowerWallsLayer);
-      	this.addCollisionWithDoors(enemiesGroup, doorClosedLayer,doorOpenLayer);
-      	this.physics.add.collider(enemiesGroup, enemiesGroup);
+      	this.addCollisionWithWalls(this.enemiesGroup,upperWallsLayer,lowerWallsLayer);
+      	this.addCollisionWithDoors(this.enemiesGroup, doorClosedLayer,doorOpenLayer);
+      	this.physics.add.collider(this.enemiesGroup, this.enemiesGroup);
 
-      	this.addCollisionWithWalls(elfGroup,upperWallsLayer,lowerWallsLayer);
-      	this.addCollisionWithDoors(elfGroup, doorClosedLayer,doorOpenLayer);
-      	this.physics.add.collider(elfGroup, elfGroup);
+      	this.addCollisionWithWalls(this.elfGroup,upperWallsLayer,lowerWallsLayer);
+      	this.addCollisionWithDoors(this.elfGroup, doorClosedLayer,doorOpenLayer);
+      	this.physics.add.collider(this.elfGroup, this.elfGroup);
 
       	// start animated tile movment
       	this.sys.animatedTiles.init(map);
