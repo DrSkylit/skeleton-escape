@@ -1,33 +1,39 @@
 levels = {
 	"level_1":{
-         "tinyZombie":10,
+        "tinyZombie":10,
      },
      "level_2":{
-         "tinyZombie":15
+        "tinyZombie":15
      },
      "level_3":{
-         "tinyZombie":20
+        "tinyZombie":20
      },
      "level_4":{
-         "tinyZombie":25
+        "tinyZombie":25
      },
      "level_5":{
-         "tinyZombie":30
+        "bigZombie":3,
+        "tinyZombie":15
      },
      "level_6":{
-         "tinyZombie":40
+        "bigZombie":6,
+        "tinyZombie":25
      },
      "level_7":{
-         "tinyZombie":45
+        "bigZombie":7,
+        "tinyZombie":30
      },
      "level_8":{
-         "tinyZombie":50
+        "bigZombie":10,
+        "tinyZombie":40
      },
      "level_9":{
-         "tinyZombie":60
+        "bigZombie":11,
+        "tinyZombie":50
      },
      "level_10":{
         "elf": 4,
+        "bigZombie":5,
         "tinyZombie":10
      }
 }

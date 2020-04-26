@@ -64,4 +64,9 @@ class EnemyParent extends Phaser.Physics.Arcade.Sprite {
         // Must Be Called in order for update to call
         this.update(time, delta); 
     }
+    // This function is used only if a child has specific items or functions 
+    // (ex. time.addEvent) that need to be destroyed before the actual object is destroyed
+    beforeDestroy(){
+        console.log("function beforeDestroy needs to be called");
+    }
 }

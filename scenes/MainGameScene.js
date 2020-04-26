@@ -51,6 +51,7 @@ class MainGameScene extends Phaser.Scene{
 		var key = new Key(this);
 		key.setStartingPosition(map);
 		this.enemiesGroup = this.physics.add.group();
+		this.bigZombieGroup = this.physics.add.group();
 		this.elfGroup = this.physics.add.group();
 		// create enemy factory that creates all enemies
 		var enemyFactory = new EnemyFactory(this,map);
@@ -67,6 +68,7 @@ class MainGameScene extends Phaser.Scene{
       	this.physics.add.collider(this.player, lowerWallsLayer);
 		this.physics.add.collider(this.player, this.enemiesGroup,enemyCollision);
 		this.physics.add.collider(this.player, this.elfGroup,enemyCollision);
+		this.physics.add.collider(this.player, this.bigZombieGroup,enemyCollision);
       	var closedDoor = this.physics.add.collider(this.player, doorClosedLayer,openDoorCollision);
       	var pickup = this.physics.add.collider(this.player, key, keyPickupCollision);
       	// sets name of some collisions to be accesed later
@@ -76,6 +78,10 @@ class MainGameScene extends Phaser.Scene{
       	this.addCollisionWithWalls(this.enemiesGroup,upperWallsLayer,lowerWallsLayer);
       	this.addCollisionWithDoors(this.enemiesGroup, doorClosedLayer,doorOpenLayer);
       	this.physics.add.collider(this.enemiesGroup, this.enemiesGroup);
+
+      	this.addCollisionWithWalls(this.bigZombieGroup,upperWallsLayer,lowerWallsLayer);
+      	this.addCollisionWithDoors(this.bigZombieGroup, doorClosedLayer,doorOpenLayer);
+      	this.physics.add.collider(this.bigZombieGroup, this.bigZombieGroup);
 
       	this.addCollisionWithWalls(this.elfGroup,upperWallsLayer,lowerWallsLayer);
       	this.addCollisionWithDoors(this.elfGroup, doorClosedLayer,doorOpenLayer);

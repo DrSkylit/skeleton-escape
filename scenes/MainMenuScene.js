@@ -15,7 +15,6 @@ class MainMenuScene extends Phaser.Scene{
 		const map = this.make.tilemap({ key: "mainMenu" });
 	    const tileset = map.addTilesetImage("skeletonEscapeTileset", "tileMapImage");
 
-
 	    // create static layers from tileMap
 	    const lowerFloorLayer = map.createStaticLayer("floor_layer0", tileset, 0, 0);
 	   	map.createDynamicLayer("animated_floor_layer", tileset, 0, 0);

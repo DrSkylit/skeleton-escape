@@ -10,6 +10,10 @@ class EnemyFactory{
 				var tinyZombie = new TinyZombie(this.scene,this.scene.enemiesGroup);
 				tinyZombie.setStartingPosition(this.map);
 				break;
+			case "bigZombie":
+				var bigZombie = new BigZombie(this.scene,this.scene.bigZombieGroup);
+				bigZombie.setStartingPosition(this.map);
+				break;
 			case "elf":
 						var elf = new Elf(this.scene,this.scene.elfGroup);
 						elf.setStartingPosition(this.map);

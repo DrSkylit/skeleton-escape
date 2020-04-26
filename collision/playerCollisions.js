@@ -46,6 +46,7 @@ enemyCollision = function(player,enemy){
     var pickup = player.scene.physics.add.collider(player, player.key, keyPickupCollision);
     const map = player.scene.make.tilemap({ key: "mainGame" });
     pickup.setName("keyPickup");
+    enemy.beforeDestroy();
     enemy.destroy();
     if(player.hasKey){
         player.hasKey = false;
