@@ -12,7 +12,7 @@ class TinyZombie extends EnemyParent{
 	        start: 0, end: 3,
 	        prefix: 'tiny_zombie_run_anim_f', suffix: '.png'
 	    });
-
+	    console.log(walkAnim);
 		this.scene.anims.create({
 	        key: 'tinyZombieIdle',
 	        frames: idleAnim,

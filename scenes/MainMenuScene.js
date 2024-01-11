@@ -16,14 +16,14 @@ class MainMenuScene extends Phaser.Scene{
 	    const tileset = map.addTilesetImage("skeletonEscapeTileset", "tileMapImage");
 
 	    // create static layers from tileMap
-	    const lowerFloorLayer = map.createStaticLayer("floor_layer0", tileset, 0, 0);
-	   	map.createDynamicLayer("animated_floor_layer", tileset, 0, 0);
-	    const upperFloorLayer = map.createStaticLayer("floor_layer1", tileset, 0, 0);
-	    const lowerWallsLayer = map.createStaticLayer("wall_layer0", tileset, 0, 0);
-	    map.createDynamicLayer("animated_wall_layer", tileset, 0, 0);
-	    const upperWallsLayer = map.createStaticLayer("wall_layer1", tileset, 0, 0);
-	    const doorClosedLayer = map.createStaticLayer("door_open", tileset, 0, 0);
-	    const doorOpenLayer = map.createStaticLayer("door_closed", tileset, 0, 0);
+	    const lowerFloorLayer = map.createLayer("floor_layer0", tileset, 0, 0);
+	   	map.createLayer("animated_floor_layer", tileset, 0, 0);
+	    const upperFloorLayer = map.createLayer("floor_layer1", tileset, 0, 0);
+	    const lowerWallsLayer = map.createLayer("wall_layer0", tileset, 0, 0);
+	    map.createLayer("animated_wall_layer", tileset, 0, 0);
+	    const upperWallsLayer = map.createLayer("wall_layer1", tileset, 0, 0);
+	    const doorClosedLayer = map.createLayer("door_open", tileset, 0, 0);
+	    const doorOpenLayer = map.createLayer("door_closed", tileset, 0, 0);
 
 	    // add collision to some of the layers
 	    upperWallsLayer.setCollisionByProperty({ collides: true });
